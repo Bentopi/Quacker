@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.3.1
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: LmfjY1QuBlu3AqQwqzXPoRHqfMyalzQdwIU9fJyTq+pJBvB4RBK0KdfTlYp9RhbbAXjHL3yqMBceqDSmguqt0i16Kuihxx0H0prgntdZOW3l8WvzRHWG+yVE4VZkI13ZCF7Mpy6TaP3ho3xuRjxn5iU/PMchm5MZOJAZAtnR1MnpNE2imTSRF1GdcQf/UbD5I4h2QkpXTSwgX5r5ETSi9I5auBVYCgCNxrtNQq3mJtKxzvdNHbshJWxdH2ACdumzKfFXuyyLvIW2vfIUowoAZdXlvr14IE8e7YXdJKJrGKESbJ85/uTu3kLIO4je2d9h4BKFfQIAHmY6GLH3cgaLzcIPMD+VuObP1XHdWWB1w3JdIwByanTlZLmGSPNiZ9qrIqttkiO10cBzZrluO53px1cl3Dp1kzgFyoQY8tQ82KgJdIQ94wEhXJzLVawrt/4XK9/uFw9HLUuIvUXykKs8Z8PLioZNtaDfffQbu9HEgA5E0guGI3zi200WzrUqL1ck5PusDZPNXpziQiMjrD6G5ATv7THmdy3Y0/THWKilz7mA61YNPNaqWzvmvVjZynZcKhX5YG0mq3KCTC1P+isD2l1BF7S71l7EUP/zz3wWZzxMusogrZmvn1Q/sUqJGKYFOSnI+Dko9qFJmVXSb5w+wJDQYNo/zdr1RwHbV5uc4FY=
+  app: quacker-bentopi
+  on:
+    repo: Bentopi/Quacker
