@@ -1,3 +1,6 @@
+$mainColor:#189DDC;
+$mutedColor:#7E8183;
+
 .navbar-brand {
   height: 40px;
   padding: 0px;
@@ -7,4 +10,12 @@ body { padding-top: 70px; }
 
 .sign_in {
   margin-right: 20px;
+}
+.quack-well {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: lighten($mainColor, 40%);
+  .muted {
+    color: $mutedColor;
+  }
 }

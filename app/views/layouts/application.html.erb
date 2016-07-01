@@ -11,7 +11,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to root_path do %>
-        <%= image_tag("quacker_logo", class: "navbar-brand") %>
+        <%= image_tag("http://i.imgur.com/yxVneY6.png", class: "navbar-brand") %>
       <% end %>
     </div>
     <div class="sign_in navbar-right">
@@ -25,7 +25,18 @@
           <%= link_to "Sign In", sign_in_path, class: "btn btn-primary navbar-btn" %>
       <% end %>
     </div>
-
+    <div class="navbar-text">
+      <%= link_to "Top Ducks", top_quack_path, class: "navbar-link"%>
+    </div>
+    <div class="navbar-text">
+      Following
+    </div>
+    <div class="navbar-text">
+      Your Ducklings
+    </div>
+    <div class="navbar-btn">
+      <%= link_to "New Quack!", new_quack_path, class: "btn btn-danger" %>
+    </div>
   </div>
 </nav>
 

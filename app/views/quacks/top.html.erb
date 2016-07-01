@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-sm-6 col-xs-12 text-center">
+      <h1>Top Quackers</h1>
+        <% @top_ducks.each do |duck| %>
+        <ul class="list-unstyled">
+          <li> <%= duck.username %>: <%= duck.quacks.size %> quacks   </li>
+        </ul>
+        <% end %>
+    </div>
+    <div class="col-sm-6 col-xs-12 text-center">
+      <h1>Top Ducks</h1>
+        <% @top_ducks.each do |duck| %>
+        <ul class="list-unstyled">
+          <li> <%= duck.username %> : <%= duck.quacks.size %> ducklings   </li>
+        </ul>
+        <% end %>
+    </div>
+</div>
