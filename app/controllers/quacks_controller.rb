@@ -7,7 +7,7 @@ class QuacksController < ApplicationController
   end
 
   def top
-    @top_ducks = User.all
+    @top_ducks = User.where("id != ?", @current_user.id)
   end
 
 
