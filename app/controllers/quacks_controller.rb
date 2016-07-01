@@ -18,7 +18,6 @@ class QuacksController < ApplicationController
     @quack = Quack.new
     @quack.body = params[:quack][:body]
     @quack.user = @current_user
-    @current_user.post_total += 1
 
     if @quack.save
       redirect_to root_path, notice: "Quack!"
