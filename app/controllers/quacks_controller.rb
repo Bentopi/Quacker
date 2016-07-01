@@ -10,7 +10,6 @@ class QuacksController < ApplicationController
     @top_ducks = User.where("id != ?", @current_user.id)
   end
 
-
   def new
     @quack = Quack.new
   end
