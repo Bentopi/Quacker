@@ -1,10 +1,11 @@
 <div class="container">
   <% @quacks.each do |quack| %>
-  <div class="well quack-well">
-  <small class="muted"><em><%= time_ago_in_words quack.created_at %> ago
-    <%= quack.user.username %> quacked: <br>
-  </em></small>
-    <%= quack.body %>
-  </div>
+    <div class="well quack-well">
+      <small class="muted"><em>
+        <%= time_ago_in_words quack.created_at %> ago
+        <%= quack.user.username %> quacked: <br>
+      </em></small>
+        <%= quack.body %>
+    </div>
   <% end %>
 </div>
