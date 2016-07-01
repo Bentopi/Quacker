@@ -1,0 +1,21 @@
+<div class="container">
+  <% if @quack.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <% @quack.errors.full_messages.each do |msg| %>
+        <%= msg %><br>
+        <% end %>
+    </div>
+  <% end %>
+
+  <div class="well">
+    <%= form_for @quack, url:create_quack_path do |f| %>
+    <div class="form-group">
+      <%= f.label "Message:" %>
+      <%= f.text_area :body, class:"form-control", rows:"5"%>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Quack it!", class:'btn-lg btn-danger btn-block' %>
+    </div>
+  </div>
+  <% end %>
+</div>
