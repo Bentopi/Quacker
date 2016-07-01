@@ -3,7 +3,14 @@
       <h1>Top Quackers</h1>
         <% @top_ducks.each do |duck| %>
         <ul class="list-unstyled">
-          <li> <%= duck.username %>: <%= duck.quacks.size %> quacks   </li>
+
+          <li> <%= duck.username %>: <%= duck.quacks.size %> quacks
+            <% if @current_user.following?(duck) %>
+            <%= link_to "- Unfollow", unfollow_path(user_id: duck.id), method: :post%>
+            <% else %>
+            <%= link_to "- Follow", follow_path(user_id: duck.id), method: :post%>
+            <% end %>
+          </li>
         </ul>
         <% end %>
     </div>
@@ -11,7 +18,13 @@
       <h1>Top Ducks</h1>
         <% @top_ducks.each do |duck| %>
         <ul class="list-unstyled">
-          <li> <%= duck.username %> : <%= duck.quacks.size %> ducklings   </li>
+          <li> <%= duck.username %> : <%= duck.followers_count %> ducklings
+            <% if @current_user.following?(duck) %>
+            <%= link_to "- Unfollow", unfollow_path(user_id: duck.id), method: :post%>
+            <% else %>
+            <%= link_to "- Follow", follow_path(user_id: duck.id), method: :post%>
+            <% end %>
+         </li>
         </ul>
         <% end %>
     </div>

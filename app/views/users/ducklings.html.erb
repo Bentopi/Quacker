@@ -1,0 +1,14 @@
+<div class="container">
+  <h3 class="text">You have <%=pluralize(@current_user.followers_count, 'duckling')%>!</h3>
+  <% @ducklings.each do |duckling|%>
+    <ul class="list-unstyled">
+      <%= duckling.username %>
+      <% if @current_user.following?(duckling) %>
+        <%= link_to "- Unfollow", unfollow_path(user_id: duckling.id), method: :post%>
+      <% else %>
+        <%= link_to "- Follow", follow_path(user_id: duckling.id), method: :post%>
+      <% end %>
+      </li>
+    </ul>
+  <% end %>
+</div>
