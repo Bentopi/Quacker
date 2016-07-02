@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  before_action do
+    if @current_user.nil?
+      redirect_to sign_in_path, alert: "Please sign if if you'd like to quack"
+    end
+  end
+
+
   def new
     @user = User.new
   end
