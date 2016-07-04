@@ -12,6 +12,8 @@ gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'minitest-rails'
 gem 'acts_as_follower', '~> 0.2.1'
+gem 'populator'
+gem 'faker'
 gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'byebug'
